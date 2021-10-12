@@ -1,0 +1,307 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list], ul, ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.introduction {
+  grid-area: introduction;
+  margin-bottom: clamp(2.5rem, 1.7958rem + 3.0047vw, 4.5rem);
+}
+@media (min-width: 1100px) {
+  .introduction {
+    justify-self: start;
+    margin-bottom: 0;
+  }
+}
+.introduction__title {
+  line-height: 1;
+  letter-spacing: clamp(-0.07125rem, -0.0589rem + -0.0526vw, -0.10625rem);
+  text-align: center;
+  font-size: clamp(2rem, 1.6479rem + 1.5023vw, 3rem);
+  font-weight: bold;
+  color: #512051;
+}
+@media (min-width: 1100px) {
+  .introduction__title {
+    text-align: left;
+    animation: text-focus-in 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  }
+  @keyframes text-focus-in {
+    0% {
+      filter: blur(5px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+}
+.introduction__paragraph {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.67;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: #927B91;
+  margin: 1.4375rem 0 0;
+}
+@media (min-width: 1100px) {
+  .introduction__paragraph {
+    text-align: left;
+  }
+}
+
+.ratings {
+  grid-area: ratings;
+  width: 100%;
+}
+.ratings__conteiner {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+}
+@media (min-width: 1100px) {
+  .ratings__conteiner {
+    max-width: 540px;
+  }
+}
+@media (min-width: 1100px) {
+  .ratings {
+    display: grid;
+    justify-items: end;
+    align-items: center;
+  }
+}
+
+.rating {
+  max-width: 27.8125rem;
+  width: 100%;
+  max-height: 4.875rem;
+  padding: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem) 0;
+  border-radius: 8px;
+  background: #F7F2F7;
+  display: flex;
+  flex-basis: 27.8125rem;
+  gap: 1rem 2rem;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 1100px) {
+  .rating {
+    max-height: 3.5rem;
+    flex-direction: row;
+    padding-left: 2rem;
+  }
+}
+.rating__star {
+  max-width: 7.284375rem;
+  height: 0.985625rem;
+  object-fit: cover;
+  object-position: left;
+}
+@media (min-width: 1100px) {
+  .rating__star {
+    animation: star 1.5s;
+  }
+}
+@keyframes star {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 7.284375rem;
+  }
+}
+.rating__paragraph {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #512051;
+}
+.rating:nth-child(1) {
+  align-self: flex-start;
+}
+.rating:nth-child(3) {
+  align-self: flex-end;
+}
+
+.cards {
+  grid-area: cards;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 1.875rem;
+  align-items: center;
+  margin-top: 3.0625rem;
+}
+@media (min-width: 1100px) {
+  .cards {
+    flex-direction: row;
+    min-height: 16.625rem;
+    max-height: 18.75rem;
+    margin-top: 4.5rem;
+  }
+}
+
+.card {
+  padding: 2.5rem 2rem clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
+  display: grid;
+  grid-template: "img name" "img status" "quote quote"/3.9375rem;
+  max-width: 21.875rem;
+  border-radius: 8px;
+  background-color: #512051;
+}
+@media (min-width: 1100px) {
+  .card {
+    max-height: 14.625rem;
+  }
+}
+.card__img {
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  grid-area: img;
+}
+.card__name {
+  grid-area: name;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 0.8125rem;
+}
+.card__status {
+  grid-area: status;
+  color: #EE69A4;
+  font-size: 0.8125rem;
+}
+.card__quote {
+  grid-area: quote;
+  color: #FFFFFF;
+  line-height: 1.69;
+  letter-spacing: -0.014375rem;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  margin-top: 1.625rem;
+}
+.card:nth-child(1) {
+  align-self: flex-start;
+}
+.card:nth-child(3) {
+  align-self: flex-end;
+}
+
+body {
+  background-color: #FFFFFF;
+  font-family: "Spartan", sans-serif;
+  padding: clamp(5rem, 3.9657rem + 4.4131vw, 7.9375rem) clamp(1.5rem, -1.603rem + 13.2394vw, 10.3125rem) 6.25rem;
+  background-image: url(/images/bg-pattern-top-mobile.svg), url(/images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+  animation: bg 5s ease 0s normal;
+}
+@media (min-width: 1100px) {
+  body {
+    background-image: url(/images/bg-pattern-top-desktop.svg), url(/images/bg-pattern-bottom-desktop.svg);
+  }
+}
+@keyframes bg {
+  0% {
+    background-position: 0 0, 100% 100%;
+  }
+  50% {
+    background-position: -20px -20px, 102% 102%;
+  }
+  100% {
+    background-position: 0 0, bottom right;
+  }
+}
+
+.main {
+  display: grid;
+  grid-template: "introduction" "ratings" "cards";
+  justify-items: center;
+  justify-content: center;
+}
+@media (min-width: 1100px) {
+  .main {
+    grid-template: "introduction ratings" "cards cards"/27.8125rem minmax(auto, 41.5625rem);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,88 @@
+.cards {
+  grid-area: cards;
+  display: flex;
+  flex-direction: column;
+  gap: rem(16) rem(30);
+  align-items: center;
+  margin-top: rem(49);
+
+
+  @media (min-width: $decktopWidth) {
+    flex-direction: row;
+    min-height: rem(266);
+
+    max-height: rem(300);
+    margin-top: 4.5rem;
+
+  }
+
+
+}
+
+
+.card {
+  padding: rem(40) rem(32) flex(32, 40);
+
+  display: grid;
+  grid-template: "img name"
+  "img status"
+  "quote quote"
+  / #{rem(63)};
+
+  max-width: rem(350);
+  border-radius: 8px;
+  background-color: $c__finn;
+
+  @media (min-width: $decktopWidth) {
+    max-height: rem(234);
+
+  }
+
+
+  &__img {
+    border-radius: 50%;
+    height: rem(40);
+    width: rem(40);
+    grid-area: img;
+
+
+  }
+
+
+
+
+  &__name {
+    grid-area: name;
+    font-weight: bold;
+    color: $c__white;
+    font-size: rem(13);
+  }
+
+  &__status {
+    grid-area: status;
+    color: $c__brilliant-rose;
+    font-size: rem(13);
+
+  }
+
+  &__quote {
+    grid-area: quote;
+    color: $c__white;
+    line-height: 1.69;
+    letter-spacing: rem(-0.23);
+    font-weight: 500;
+    font-size: rem(13);
+    margin-top: rem(26);
+  }
+
+
+  &:nth-child(1) {
+    align-self: flex-start;
+
+  }
+
+  &:nth-child(3) {
+    align-self: flex-end;
+
+  }
+}

@@ -1,0 +1,58 @@
+@import "reset";
+@import "base";
+@import "introduction";
+@import "ratings";
+@import "cards";
+
+
+body {
+    background-color: $c__white;
+    font-family: 'Spartan', sans-serif;
+
+    padding: flex(80, 127) flex(24, 165) rem(100);
+
+    background-image: url(/images/bg-pattern-top-mobile.svg), url(/images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+
+    @media (min-width: $decktopWidth) {
+        background-image: url(/images/bg-pattern-top-desktop.svg), url(/images/bg-pattern-bottom-desktop.svg);
+
+    }
+
+    animation: bg 5s ease 0s normal;
+
+    @keyframes bg {
+        0% {
+            background-position: 0 0, 100% 100%;
+        }
+
+        50% {
+            background-position: -20px -20px, 102% 102%;
+        }
+
+        100% {
+            background-position: 0 0, bottom right;
+        }
+    }
+}
+
+
+.main {
+    display: grid;
+    grid-template:
+        "introduction"
+        "ratings"
+        "cards"
+    ;
+    justify-items: center;
+    justify-content: center;
+
+    @media (min-width: $decktopWidth) {
+        grid-template:
+            "introduction ratings"
+            "cards cards"
+            / rem(445) minmax(auto, rem(665));
+    }
+
+}

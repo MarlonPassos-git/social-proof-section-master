@@ -1,0 +1,58 @@
+.introduction {
+    grid-area: introduction;
+    margin-bottom: flex(40, 72);
+
+
+
+    @media (min-width: $decktopWidth) {
+        justify-self: start;
+        margin-bottom: 0;
+    }
+
+
+    &__title {
+        line-height: 1;
+        letter-spacing: flex(-1.14, -1.7);
+        text-align: center;
+
+        font-size: flex(32, 48);
+        font-weight: bold;
+        color: $c__finn;
+
+
+        @media (min-width: $decktopWidth) {
+            text-align: left;
+
+            animation: text-focus-in 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+            @keyframes text-focus-in {
+                0% {
+                    filter: blur(5px);
+                    opacity: 0;
+                }
+
+                100% {
+                    filter: blur(0px);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__paragraph {
+        font-size: rem(15);
+        font-weight: 500;
+        line-height: 1.67;
+        letter-spacing: -0.5px;
+        text-align: center;
+        color: $c__venus;
+
+        margin: rem(23) 0 0;
+
+        @media (min-width: $decktopWidth) {
+            text-align: left;
+        }
+    }
+
+
+}
